@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=XIVLauncher Core
+Type=Application
+Exec=/usr/games/xivlauncher-core
+StartupNotify=true
+Categories=Game
+Icon=xivlauncher-core
+NoDisplay=false
+Terminal=false

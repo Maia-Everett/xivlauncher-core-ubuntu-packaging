@@ -1,0 +1,2 @@
+#!/bin/sh
+OPENSSL_CONF=/usr/lib/xivlauncher-core/openssl.conf exec /usr/lib/xivlauncher-core/XIVLauncher.Core

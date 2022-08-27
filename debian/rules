@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+export DOTNET_CLI_HOME=/tmp/dotnet-cli-home
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	cd src/XIVLauncher.Core && dotnet clean -c Release; true
+	find -type d -name bin | xargs rm -rf
+	find -type d -name obj | xargs rm -rf
+	[ ! -f debian/install_files/xivlauncher-core.png ] || rm -f debian/install_files/xivlauncher-core.png
+
+override_dh_auto_build:
+	cd src/XIVLauncher.Core && dotnet build -c Release -p:BuildHash=`cat ../../debian/buildhash.txt`
+
+override_dh_install:
+	cp src/XIVLauncher.Core/Resources/logo.png debian/install_files/xivlauncher-core.png
+	dh_install
+	cd debian/xivlauncher-core/usr/lib/xivlauncher-core && find -type f -name '*.dll' | xargs chmod 644
+	# Delete all runtimes except linux-x64
+	cd debian/xivlauncher-core/usr/lib/xivlauncher-core/runtimes && find -type d -name linux-x64 -prune -o \( \! -name '*~' -print0 \) | xargs -0 rm -rf; true

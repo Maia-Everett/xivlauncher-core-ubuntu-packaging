@@ -1,0 +1,14 @@
+Source: xivlauncher-core
+Section: games
+Priority: optional
+Maintainer: Maia Everett <maia@everett.one>
+Build-Depends: debhelper-compat (= 13), dotnet-sdk-6.0
+
+Package: xivlauncher-core
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-6.0
+Description: Unofficial launcher for Final Fantasy XIV
+ XIVLauncher Core is a native Linux application for launching the massive
+ multiplayer game Final Fantasy XIV. It is entirely self-contained, integrates
+ with the native Linux version of Steam, and does not require a Wine
+ installation to function.

@@ -1,0 +1,5 @@
+src/XIVLauncher.Core/bin/Release/net6.0/* usr/lib/xivlauncher-core/
+debian/install_files/openssl.conf usr/lib/xivlauncher-core/
+debian/install_files/xivlauncher-core usr/games/
+debian/install_files/xivlauncher-core.desktop usr/share/applications/
+debian/install_files/xivlauncher-core.png usr/share/pixmaps/
