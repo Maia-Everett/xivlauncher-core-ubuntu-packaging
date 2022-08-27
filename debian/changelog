@@ -1,3 +1,9 @@
+xivlauncher-core (1.0.1.0-0~ubuntu22.04.3) jammy; urgency=medium
+
+  * Distribute appdata.xml.
+
+ -- Maia Everett <maia@everett.one>  Sat, 27 Aug 2022 22:06:01 +0700
+
 xivlauncher-core (1.0.1.0-0~ubuntu22.04.2) jammy; urgency=medium
 
   * Initial release.
