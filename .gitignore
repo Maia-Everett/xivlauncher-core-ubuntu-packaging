@@ -7,6 +7,8 @@
 /debian/debhelper-build-stamp
 /debian/xivlauncher-core
 /debian/files
+/debian/dotnet-cli-home
+/debian/dotnet-cli-home.tar
 /debian/*.substvars
 
 ## Ignore Visual Studio temporary files, build results, and

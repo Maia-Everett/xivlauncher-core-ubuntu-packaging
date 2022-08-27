@@ -1,0 +1,2 @@
+# Creating debian.tar.xz takes a lot of time, so create tar.gz instead
+compression = "gzip"

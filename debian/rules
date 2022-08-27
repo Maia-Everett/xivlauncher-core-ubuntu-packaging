@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-export DOTNET_CLI_HOME=/tmp/dotnet-cli-home
+export DOTNET_CLI_HOME=$(CURDIR)/debian/dotnet-cli-home
 
 %:
 	dh $@
@@ -10,8 +10,10 @@ override_dh_auto_clean:
 	find -type d -name bin | xargs rm -rf
 	find -type d -name obj | xargs rm -rf
 	[ ! -f debian/install_files/xivlauncher-core.png ] || rm -f debian/install_files/xivlauncher-core.png
+	[ ! -d debian/dotnet-cli-home ] || rm -rf debian/dotnet-cli-home
 
 override_dh_auto_build:
+	cd debian && [ -d dotnet-cli-home ] || [ ! -f dotnet-cli-home.tar ] || tar xf dotnet-cli-home.tar
 	cd src/XIVLauncher.Core && dotnet build -c Release -p:BuildHash=`cat ../../debian/buildhash.txt`
 
 override_dh_install:
