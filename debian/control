@@ -6,7 +6,7 @@ Build-Depends: debhelper-compat (= 13), dotnet-sdk-6.0, libglib2.0-dev, libsecre
 
 Package: xivlauncher-core
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-6.0
+Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-6.0, libsdl2-2.0-0, aria2, xdg-utils, desktop-file-utils
 Description: Unofficial launcher for Final Fantasy XIV
  XIVLauncher Core is a native Linux application for launching the massive
  multiplayer game Final Fantasy XIV. It is entirely self-contained, integrates
