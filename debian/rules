@@ -9,7 +9,7 @@ export NUGET_PACKAGES=$(CURDIR)/debian/dotnet-cli-home/packages-global
 	dh $@
 
 override_dh_auto_clean:
-	cd src/XIVLauncher.Core && dotnet clean -c Release; true
+#	cd src/XIVLauncher.Core && dotnet clean -c Release; true
 	find -type d -name bin | xargs rm -rf
 	find -type d -name obj | xargs rm -rf
 	[ ! -f debian/install_files/xivlauncher-core.png ] || rm -f debian/install_files/xivlauncher-core.png
@@ -17,7 +17,7 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	cd debian && [ -d dotnet-cli-home ] || [ ! -f dotnet-cli-home.tar ] || tar xf dotnet-cli-home.tar
-	cd src/XIVLauncher.Core && dotnet restore -v diag --configfile ../../debian/NuGet.Config --source ../../debian/dotnet-cli-home/.nuget/packages
+	cd src/XIVLauncher.Core && dotnet restore -v diag
 	cd src/XIVLauncher.Core && dotnet build --no-restore -c Release -p:BuildHash=`cat ../../debian/buildhash.txt` XIVLauncher.Core.csproj
 
 override_dh_install:
