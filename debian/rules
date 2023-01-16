@@ -1,6 +1,9 @@
 #!/usr/bin/make -f
 
 export DOTNET_CLI_HOME=$(CURDIR)/debian/dotnet-cli-home
+export NUGET_CERT_REVOCATION_MODE=offline
+export NUGET_ENABLE_ENHANCED_HTTP_RETRY=false
+export NUGET_PACKAGES=$(CURDIR)/debian/dotnet-cli-home/packages-global
 
 %:
 	dh $@
@@ -14,10 +17,11 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	cd debian && [ -d dotnet-cli-home ] || [ ! -f dotnet-cli-home.tar ] || tar xf dotnet-cli-home.tar
-	cd src/XIVLauncher.Core && dotnet build -c Release -p:BuildHash=`cat ../../debian/buildhash.txt`
+	cd src/XIVLauncher.Core && dotnet restore -v diag --configfile ../../debian/NuGet.Config --source ../../debian/dotnet-cli-home/.nuget/packages
+	cd src/XIVLauncher.Core && dotnet build --no-restore -c Release -p:BuildHash=`cat ../../debian/buildhash.txt` XIVLauncher.Core.csproj
 
 override_dh_install:
-	cp src/XIVLauncher.Core/Resources/logo.png debian/install_files/xivlauncher-core.png
+	cp misc/linux_distrib/512.png debian/install_files/xivlauncher-core.png
 	dh_install
 	cd debian/xivlauncher-core/usr/lib/xivlauncher-core && find -type f -name '*.dll' | xargs chmod 644
 	# Delete all runtimes except linux-x64

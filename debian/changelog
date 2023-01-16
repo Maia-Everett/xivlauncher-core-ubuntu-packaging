@@ -1,8 +1,9 @@
-xivlauncher-core (1.0.1.0-0~ubuntu22.04.4) jammy; urgency=medium
+xivlauncher-core (1.0.3-0~ubuntu22.04.1) jammy; urgency=medium
 
+  * New upstream release.
   * Add missing dependencies.
 
- -- Maia Everett <maia@everett.one>  Thu, 10 Nov 2022 22:26:48 +0700
+ -- Maia Everett <maia@everett.one>  Sun, 20 Nov 2022 15:27:49 +0700
 
 xivlauncher-core (1.0.1.0-0~ubuntu22.04.3) jammy; urgency=medium
 
