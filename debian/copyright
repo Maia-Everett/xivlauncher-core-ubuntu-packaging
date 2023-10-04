@@ -1,13 +1,13 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: quodlibet
-Upstream-Contact: reiter.christoph@gmail.com, nick.boultbee@gmail.com
-Source: https://github.com/quodlibet/quodlibet
+Upstream-Name: XIVLauncher.Core
+Upstream-Contact: goatsdev@protonmail.com
+Source: https://github.com/goatcorp/XIVLauncher.Core
 
 Files: *
-Copyright: 2016-2022 goatcorp <goatsdev@protonmail.com>
+Copyright: 2016-2023 goatcorp <goatsdev@protonmail.com>
     and others
 License: GPL-3+
 
 Files: debian/*
-Copyright: 2022 Maia Everett <maia@everett.one>
+Copyright: 2022-2023 Maia Everett <maia@everett.one>
 License: GPL-3+
