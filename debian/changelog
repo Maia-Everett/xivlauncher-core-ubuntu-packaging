@@ -1,3 +1,9 @@
+xivlauncher-core (1.0.6-0~ubuntu22.04.1) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Maia Everett <maia@everett.one>  Sun, 08 Oct 2023 13:14:55 +0300
+
 xivlauncher-core (1.0.5-0~ubuntu22.04.1) jammy; urgency=medium
 
   * New upstream release. Fixes "The patch installer ran into an error".
