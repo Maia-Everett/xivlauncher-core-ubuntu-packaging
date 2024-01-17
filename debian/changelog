@@ -1,3 +1,9 @@
+xivlauncher-core (1.0.7-0~ubuntu22.04.1) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Maia Everett <maia@everett.one>  Wed, 17 Jan 2024 01:42:42 +0200
+
 xivlauncher-core (1.0.6-0~ubuntu22.04.1) jammy; urgency=medium
 
   * New upstream release.
